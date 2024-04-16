@@ -1,0 +1,49 @@
+.form-container {
+    position: relative;
+}
+
+.form-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* Translucent overlay color */
+    z-index: 1;
+}
+
+.form-overlay.disabled {
+    display: none;
+}
+
+.form {
+    position: relative;
+}
+
+.form.disabled {
+    opacity: 0.5;
+    /* Gray out the form when disabled */
+    pointer-events: none;
+    /* Disable pointer events */
+}
+
+.loading-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.8);
+    /* Translucent overlay color */
+    z-index: 2;
+    /* Ensure loading-overlay is on top of form-overlay */
+}
+
+.loading-overlay.active {
+    display: flex;
+    /* Show loading-overlay when active */
+}
