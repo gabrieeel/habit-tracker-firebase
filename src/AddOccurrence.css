@@ -1,5 +1,8 @@
 .form-container {
     position: relative;
+    display: inline-block;
+    /* To make a div element occupy a width that matches its content, you need to set its display property to inline-block. */
+    text-align: left;
 }
 
 .form-overlay {
@@ -46,4 +49,8 @@
 .loading-overlay.active {
     display: flex;
     /* Show loading-overlay when active */
+}
+
+.form-label {
+    font-weight: 700;
 }

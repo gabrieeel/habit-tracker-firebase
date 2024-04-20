@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import './AddOccurrence.css';
 
-
 function AddOccurrence({ onSubmit, selectedDate }) {
     const [description, setDescription] = useState('');
     const [duration, setDuration] = useState('');
@@ -42,31 +41,28 @@ function AddOccurrence({ onSubmit, selectedDate }) {
             <div className={`form-overlay.${formEnabled ? '' : 'disabled'}`}>
                 <form onSubmit={handleSubmit} className={`form ${formEnabled ? '' : 'disabled'}`}>
                     <div>
-                        <label>
-                            Date: {selectedDate && selectedDate.toDateString()}
-                        </label>
+                        <label className='form-label'>Date:</label><br />
+                        {selectedDate && selectedDate.toDateString()}
                     </div>
                     <div>
-                        <label>
-                            Description:
-                            <input
-                                type="text"
-                                value={description}
-                                onChange={(e) => setDescription(e.target.value)}
-                            />
-                        </label>
+                        <label className='form-label'>Description:</label><br />
+                        <input
+                            type="text"
+                            value={description}
+                            onChange={(e) => setDescription(e.target.value)}
+                        />
                     </div>
                     <div>
-                        <label>
-                            Duration (minutes):
-                            <input
-                                type="number"
-                                value={duration}
-                                onChange={(e) => setDuration(e.target.value)}
-                            />
-                        </label>
+                        <label className='form-label'>Duration (minutes):</label><br />
+                        <input
+                            type="number"
+                            value={duration}
+                            onChange={(e) => setDuration(e.target.value)}
+                        />
                     </div>
-                    <button type="submit" disabled={!formEnabled}>Add Occurrence</button>
+                    <div className='save-button-div'>
+                        <button type="submit" disabled={!formEnabled} className='save-button'>Add Occurrence</button>
+                    </div>
                 </form>
             </div>
             {loading && (
