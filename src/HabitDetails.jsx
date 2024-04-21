@@ -30,6 +30,14 @@ function HabitDetails() {
     const onClickDay = (date) => {
         console.log('onClickDay')
         console.log(date) // the date clicked
+        console.log(selectedDate);
+
+        // TODO si clickeo el mismo dia que estaba seleccionado, setSelectedDate(null)
+
+
+        setShowForm(false)
+        setShowOccurrenceDetails(false)
+
 
         var dateStr = date.toDateString();
         if (occurrences.get(dateStr)) {
@@ -39,7 +47,7 @@ function HabitDetails() {
             setShowOccurrenceDetails(true)
         } else {
             // si clickea un dia que no tiene ocurrencias, permite agregar una ocurrencia
-            toggleForm();
+            setShowForm(true)
         }
     };
 

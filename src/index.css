@@ -71,5 +71,14 @@ button:focus-visible {
 }
 
 .red-border {
-  border: 1px solid red;
+  background-color: #0c3a63;
+
+}
+
+.save-button-div {
+  text-align: center;
+}
+
+.save-button:hover {
+  background-color: rgb(1, 1, 39);
 }
